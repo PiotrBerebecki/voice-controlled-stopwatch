@@ -1,8 +1,8 @@
 # Stopwatch with Voice Control
 
-Live version: https://fac10.github.io/week2-stopwatch-joey-piotr/
+Live version: https://piotrberebecki.github.io/voice-controlled-stopwatch/
 
-A practical stopwatch to get the job done. Perfect for every timing situation including cooking, sports, games and work tasks. The app can also be operated with voice (only in Chrome).
+A practical stopwatch to measure how long it takes you to get the job done. The app can also be operated with voice (only in Chrome).
 
 Example commands:
 
@@ -20,24 +20,14 @@ Example commands:
 
 <img src="./src/graphics/screencast.gif" width="275px" height="auto">
 
-<!-- ***************************************************** -->
-##Stopwatch specification
 
- - I can press a start button, in order to start a timer
- - I can press a stop button, in order to stop the timer at how much time has passed since start
- - I can press a reset button, in order to stop the timer and reset the displayed time to 00:00:00:00
- - I can see the timer's current time in hours, seconds, minutes and milliseconds
-
- ###Stretch goals
- - Voice Control
- - Countdown functionality
 
 <!-- ***************************************************** -->
 ## Getting started
 
 ```sh
-git clone https://github.com/FAC10/week2-stopwatch-joey-piotr.git
-cd REPO
+git clone `REPO URL`
+cd `REPO NAME`
 npm install
 
 #1. Start the development server with Browsersync reloading
@@ -51,7 +41,19 @@ npm test
 
 
 <!-- ***************************************************** -->
-## Testing - [Jest](https://facebook.github.io/jest/) (Piotr)
+## Tech stack
+* Node
+* Vanilla JavaScript
+* ES6
+* Flexbox
+* Jest
+* Browsersync
+* Web Speech API
+
+
+
+<!-- ***************************************************** -->
+## Testing - [Jest](https://facebook.github.io/jest/)
 
 <img src="https://cdn.slant.co/1440ece6-1968-4c44-8b4c-8a61e397770b/-/format/jpeg/-/progressive/yes/-/preview/480x480/" width="275px" height="auto">
 
@@ -84,7 +86,7 @@ npm install jest-cli --save-dev
 ```
 
 
-### How to use Jest? (Joey)
+### How to use Jest?
 
 ```javascript
 
@@ -115,9 +117,9 @@ describe('pad', () => {
 
 
 <!-- ***************************************************** -->
-## Request Animation Frame (Joey)
+## Request Animation Frame
 
-- The window.requestAnimationFrame() method tells the browser that you want to perform an animation and requests that the browser call a specified function to update the animation.
+- The window.requestAnimationFrame() method tells the browser that you want to perform an animation and requests that the browser calls a specified function to update the animation.
 - We call this method within our `runTimer()` function in order to update the value shown on the stopwatch. The number of callbacks is usually 60 times per second. `runTimer()` is called again within `window.requestAnimationFrame()` to keep updating the stopwatch value.
 
 ```javascript
@@ -135,6 +137,7 @@ function stopTimer() {
   window.cancelAnimationFrame(animationRequestId);
 }
 ```
+
 - We used this method because it means that the animation code is only called when the user's browser is ready to make changes to the screen, resulting in a smoother animation and a more efficient use of resources.
 - We then used `Date.now()` to accurately keep track of time.
 - [window.requestAnimationFrame() MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
@@ -144,7 +147,7 @@ function stopTimer() {
 
 
 <!-- ***************************************************** -->
-## Web Speech API (Piotr)
+## Web Speech API
 
 - The [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) enables you to incorporate voice data into web apps. The Web Speech API has two parts: SpeechSynthesis (Text-to-Speech), and SpeechRecognition (Asynchronous Speech Recognition).
 - [Learn it with Wes Bos by taking JavaScript Challenge #20](https://javascript30.com/)
@@ -185,13 +188,3 @@ recognition.addEventListener('result', e => {
   haveFun(transcript);
 });
 ```
-
-
-<!-- ***************************************************** -->
-## Tech stack
-* Node
-* Vanilla JavaScript
-* ES6
-* Flexbox
-* Jest
-* Browsersync
