@@ -2,6 +2,8 @@
 
 Live version: https://piotrberebecki.github.io/voice-controlled-stopwatch/
 
+Project completed together with [Joey Scott](https://github.com/joeylouise).
+
 A practical stopwatch to measure how long it takes you to get the job done. The app can also be operated with voice (only in Chrome).
 
 Example commands:
